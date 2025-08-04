@@ -1,13 +1,227 @@
-CREATE TABLE students ( student_id INT PRIMARY KEY, first_name VARCHAR(50), last_name VARCHAR(50), department_id INT, date_of_birth DATE, enrollment_year INT
-);
-CREATE TABLE departments ( department_id INT PRIMARY KEY, department_name VARCHAR(100), head_of_department VARCHAR(100)
-f);
-CREATE TABLE courses ( course_id INT PRIMARY KEY, course_name VARCHAR(100), department_id INT
-);
-CREATE TABLE enrollments ( enrollment_id INT PRIMARY KEY, student_id INT,
-course_id INT,
-semester VARCHAR(10), grade DECIMAL(3, 2)
-);
-CREATE TABLE finance_fees ( fee_id INT PRIMARY KEY, student_id INT,
-amount DECIMAL(10, 2), payment_date DATE
-); 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GameZone - Level Up Your Play</title>
+  <style>
+    /* Reset and base */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, monospace;
+      background-color: black;
+      color: white;
+    }
+
+    /* Header */
+    header {
+      background-color: black;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid cyan;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 36px;
+      color: cyan;
+      margin: 0;
+      letter-spacing: 3px;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial, sans-serif;
+    }
+
+    nav {
+      margin-top: 12px;
+    }
+
+    nav a {
+      color: cyan;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: pink;
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+  position: relative;
+  height: 400px;
+  text-align: center;
+  border-bottom: 3px solid cyan;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+
+
+/* Optional: overlay for better text readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px cyan;
+      font-weight: 700;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial, sans-serif;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: cyan;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero button {
+      padding: 14px 32px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background-color: cyan;
+      color: black;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 0 15px cyan;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: pink;
+      box-shadow: 0 0 20px pink;
+      color: white;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 70px 20px;
+      background-color: black;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-weight: 700;
+      font-size: 32px;
+      margin-bottom: 50px;
+      color: cyan;
+      letter-spacing: 2px;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial, sans-serif;
+    }
+
+    .feature-list {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      background-color: gray;
+      border: 2px solid cyan;
+      border-radius: 15px;
+      padding: 25px;
+      width: 280px;
+      box-shadow: 0 0 12px cyan;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px pink;
+      border-color: pink;
+    }
+
+    .feature h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: cyan;
+      font-weight: 700;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial, sans-serif;
+    }
+
+    .feature p {
+      font-size: 16px;
+      color: lightcyan;
+    }
+
+    /* Footer */
+    footer {
+      background-color: black;
+      text-align: center;
+      padding: 20px;
+      color: gray;
+      font-size: 14px;
+      border-top: 2px solid cyan;
+    }
+
+   
+   
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>GameZone</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Games</a>
+      <a href="#">Tournaments</a>
+      <a href="#">Community</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+   
+    <h1>Level Up Your Play</h1>
+    <p>Join the ultimate gaming hub for pro players and casual gamers alike. Discover new titles, compete in tournaments, and connect with your squad.</p>
+    <button>Join Now</button>
+
+  </section>
+
+  <section class="features">
+    <h2>What We Offer</h2>
+    <div class="feature-list">
+      <div class="feature">
+        <h3>Game Reviews</h3>
+        <p>Expert insights and community ratings on the hottest new releases.</p>
+      </div>
+      <div class="feature">
+        <h3>Competitive Tournaments</h3>
+        <p>Regular events with cash prizes and exclusive gear.</p>
+      </div>
+      <div class="feature">
+        <h3>Community Forums</h3>
+        <p>Chat strategies, share clips, and find teammates worldwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 GameZone. All rights reserved.
+  </footer>
+
+</body>
+</html>
