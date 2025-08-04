@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>GameZone - Level Up Your Play</title>
   <style>
-    /* Reset and base */
+   
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, monospace;
@@ -12,7 +12,7 @@
       color: white;
     }
 
-    /* Header */
+   
     header {
       background-color: black;
       padding: 20px;
@@ -47,7 +47,7 @@
       text-decoration: underline;
     }
 
-    /* Hero Section */
+   
     .hero {
   position: relative;
   height: 400px;
@@ -63,7 +63,7 @@
 
 
 
-/* Optional: overlay for better text readability */
+
 .hero::before {
   content: "";
   position: absolute;
@@ -114,7 +114,7 @@
       color: white;
     }
 
-    /* Features Section */
+  
     .features {
       padding: 70px 20px;
       background-color: black;
@@ -166,7 +166,7 @@
       color: lightcyan;
     }
 
-    /* Footer */
+    
     footer {
       background-color: black;
       text-align: center;
@@ -225,3 +225,4 @@
 
 </body>
 </html>
+
